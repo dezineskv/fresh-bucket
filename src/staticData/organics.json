@@ -1,0 +1,69 @@
+{
+   "organics": [
+     {
+       "id": 1,
+       "name": "Green Apple",
+       "img": "/images/apples.png",
+       "price": "$14.99",
+       "type": "fruit"
+     },
+     {
+       "id": 2,
+       "name": "Eggplant",
+       "img": "/images/eggplant.png",
+       "price": "$14.99",
+       "type": "vegetable"
+     },
+     {
+       "id": 3,
+       "name": "Potatoes",
+       "img": "/images/potatoes.png",
+       "price": "$14.99",
+       "type": "vegetable"
+     },
+     {
+       "id": 4,
+       "name": "Oranges",
+       "img": "/images/oranges.png",
+       "price": "$14.99",
+       "type": "fruit"
+     },
+     {
+       "id": 5,
+       "name": "Red Capsicum",
+       "img": "/images/redcap.png",
+       "price": "$14.99",
+       "salePrice": "$20.99",
+       "type": "vegetable"
+     },
+     {
+       "id": 6,
+       "name": "Corn",
+       "img": "/images/corn.png",
+       "price": "$14.99",
+       "salePrice": "$20.99",
+       "type": "vegetable"
+     },
+     {
+       "id": 7,
+       "name": "Green Lettuce",
+       "img": "/images/lettuce.png",
+       "price": "$14.99",
+       "type": "vegetable"
+     },
+     {
+       "id": 8,
+       "name": "Red Tomatoes",
+       "img": "/images/tomatoes.png",
+       "price": "$14.99",
+       "type": "fruit"
+     },
+     {
+       "id": 9,
+       "name": "Fresh Cauliflower",
+       "img": "/images/cauliflower.png",
+       "price": "$14.99",
+       "type": "vegetable"
+     }
+   ]
+}
