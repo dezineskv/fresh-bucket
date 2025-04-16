@@ -5,9 +5,9 @@ const SingleBanner = () => {
   return (
     <div className="bg-white pt-6 pb-6">
       <div className="single-banner flex md:flex-row gap-4 mx-auto p-6">
-        <div className="single-cont sm:mx-0 md:mx-auto p-4">
-          <div className="text-center">
-            <div className="p-6 text-center">
+        <div className="single-cont sm:ml-auto md:ml-auto p-4">
+          <div className="ml-auto mr-0">
+            <div className="p-6 ml-auto mr-0 text-center">
               <img
                 src="/images/2024.png"
                 className="single-image pb-1"

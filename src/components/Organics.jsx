@@ -33,9 +33,9 @@ const Organics = () => {
   };
   return (
     <>
-      <div className="organics-outer pt-8 pb-4 mx-auto">
+      <div className="w-[100vw] organics-outer pt-8 pb-4 mx-auto">
         <div className="max-w-[1440px] mt-4 mx-auto p-4 pb-14">
-          <div className="mt-5 flex items-center justify-between">
+          <div className="mt-5 flex sm:flex-col md:flex-row items-center justify-between">
             <div className="pb-3">
               <div className="o-title pt-5 flex fresh">
                 <img
@@ -79,34 +79,36 @@ const Organics = () => {
               </button>
             </div>
           </div>
-          <div className="mt-4 grid md:grid-cols-4 gap-4 text-center duration-300">
-            {filteredData.map((product) => {
-              return (
-                <Link key={product.id} to={`/product/${product.id}`}>
-                  <div className="o-card rounded-lg">
-                    <div className="flex flex-row items-center">
-                      <img src={product.img} alt="products" />
-                      <div className="pt-4 pl-5 text-left">
-                        <p className="text-black text-sm">{product.name}</p>
-                        <div className="flex">
-                          <div className="text-black font-medium text-base">
-                            {product.price}
+          <div className="sm:block sm:w-[100vw] md:w-full flex  md:flex-row">
+            <div className="mt-4 sm:block sm:w-[100vw] grid md:grid-cols-4 gap-4 text-center duration-300">
+              {filteredData.map((product) => {
+                return (
+                  <Link key={product.id} to={`/product/${product.id}`}>
+                    <div className="o-card rounded-lg">
+                      <div className="sm:block flex flex-row items-center">
+                        <img src={product.img} alt="products" />
+                        <div className="pt-4 pl-5 text-left">
+                          <p className="text-black text-sm">{product.name}</p>
+                          <div className="flex">
+                            <div className="text-black font-medium text-base">
+                              {product.price}
+                            </div>
+                            <div className="pl-1 o-gray">
+                              {product.salePrice && product.salePrice}
+                            </div>
                           </div>
-                          <div className="pl-1 o-gray">
-                            {product.salePrice && product.salePrice}
+                          <div className="pt-2">
+                            <img src="/images/rating.png" alt="rating" />
                           </div>
-                        </div>
-                        <div className="pt-2">
-                          <img src="/images/rating.png" alt="rating" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              );
-            })}
-            <div className="sale-banner rounded-lg col-start-4 row-start-1 row-span-2">
-              <img src="/images/salebanner.png" alt="banner" />
+                  </Link>
+                );
+              })}
+              <div className="sale-banner rounded-lg col-start-4 row-start-1 row-span-4 h-auto">
+                <img src="/images/salebanner.png" alt="banner" className="h-auto min-h-6"/>
+              </div>
             </div>
           </div>
           <div className="mt-6 text-center buttons-c">

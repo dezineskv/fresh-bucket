@@ -22,8 +22,7 @@ const Hero = () => {
               vegetables and healthy foods.
             </p>
             <div className="mt-6 text-center buttons-l">
-              <button className="btn-primary" 
-              >
+              <button className="btn-primary">
                 Subscribe
                 <img
                   src="/images/arrow-down.png"
@@ -33,7 +32,7 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="w-[619px] h-[490px] ml-32">
+          <div className="sm:mx-auto w-[619px] h-[490px] ml-32">
             <img src="/images/hero-img.png" className="hero-img" alt="banner" />
           </div>
         </div>

@@ -156,7 +156,11 @@ h1.hero-title {
 }
 .prod-img {
       width: 370px;
-      height: 370px;
+      min-width: 320px;
+      /* height: 370px; */
+      border: 1px solid gray;
+    margin: 100px 0 100px 0;
+
 }
 .footer {
     background-color: var(--color-black-2);
@@ -171,6 +175,7 @@ justify-content: space-between;
       background-image: url("/images/vegbg.png");
       background-size: cover;
       background-repeat: no-repeat;
+      height: auto;
 }
 h3.o-h {
     color: var(--color-white);
@@ -196,7 +201,7 @@ h3.o-h {
 }
 .sale-banner {
     width: 312px;
-    height: 200px;
+    /* height: 200px; */
 }
 .single-banner{
       background-image: url("/images/singlebanner.png");

@@ -1,42 +1,51 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "../styles/global.css";
 import data from "../staticData/organics.json";
-import { ProductsContext } from './../App';
-import Rating from 'react-rating';
-import { FaStar } from 'react-icons/fa'; // Import star icon
+import Rating from "react-rating";
+import { FaStar } from "react-icons/fa"; // Import star icon
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import BestProducts from "../components/BestProducts";
+import Crumbs from "../components/Crumbs";
+
 
 const ProductDetails = () => {
-    const [singleProducts, setSingleProducts] = useState([]);
-  // const [singleProducts, setSingleProducts] = useContext(ProductsContext);
-    const [filteredData, setFilteredData] = useState(data.organics);
-    const [rating, setRating] = useState(0);
+  const [singleProducts, setSingleProducts] = useState([]);
+  const [filteredData, setFilteredData] = useState(data.organics);
+  const [rating, setRating] = useState(0);
 
   // const params = useParams();
-    const { id } = useParams();
+  const { id } = useParams();
+  const breadcrumbs = useBreadcrumbs();
 
-      useEffect(() => {
-        const singleJob = filteredData.find(
-          (product) => product.id === parseInt(id)
-        );
-         setSingleProducts(singleJob);
-      }, [id]);
+  useEffect(() => {
+    const singleJob = filteredData.find(
+      (product) => product.id === parseInt(id)
+    );
+    setSingleProducts(singleJob);
+  }, [id]);
 
   return (
     <>
-      {/* <div className="text">ProductDetails per ID : {id} </div> */}
-      <div className="hero-bg sm:h-full md:py-6">
-        <div className="max-w-[1440px] mx-auto flex flex-row text-black pt-6">
-          <div className="bg-white rounded flex sm:flex-col md:flex-row gap-2">
-            <div className="flex md:flex-row w-[100%] min-w[800px] ml-32">
-              <img src={singleProducts.img} className="prod-img" alt="item" />
-              <div className="p-10 ">
-                <h2 className="font-semibold text-black">
+      <div className="hero-bg md:py-6">
+        <Crumbs/>
+        <div className="max-w-[1440px] mx-auto  text-black pt-6">
+          <div className="w-full max-w[1440px]">
+            <div className="bg-white flex sm:flex-col md:flex-row gap-2 mx-10">
+              <div className="bg-white rounded-lg h-full max-w[400px] my-auto ml-8">
+                <img
+                  src={singleProducts.imgpng}
+                  className="prod-img bg-[#fef5d9] "
+                  alt="item"
+                />
+              </div>
+              <div className="bg-white sm:mx-auto h-[350px] pl-8 my-auto">
+                <div className="font-semibold text-black text-xlg">
                   {singleProducts.name}
-                </h2>
+                </div>
 
                 <div className="flex">
-                  <p className="mt-6">
+                  <p className="mt-3">
                     <Rating
                       initialRating={rating}
                       emptySymbol={<FaStar color="#ccc" size={30} />}
@@ -46,22 +55,23 @@ const ProductDetails = () => {
                     <div>({rating} stars)</div>
                   </p>
                 </div>
-                <p className="mt-6">
-                  <b>{singleProducts.price}</b>
-                </p>
-                <p className="mt-6">
-                  <b>Description:</b> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                  sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
+                <div className="mt-3 flex">
+                  <div className="text-3xl">
+                    <b>{singleProducts.sprice}</b>
+                  </div>
+                  <div className="text-2xl pl-3 line-through">
+                    {singleProducts.price}
+                  </div>
+                </div>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip.
                 </p>
                 <p className="mt-6">
                   <b>Category: </b>
-                  {singleProducts.type}
+                  <div className="text-gray-700">{singleProducts.type}</div>
                 </p>
                 <div className="mt-6 text-center buttons-l">
                   <button className="bg-[#27AC1F]">
@@ -78,6 +88,8 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+      <BestProducts />
     </>
   );
 };
