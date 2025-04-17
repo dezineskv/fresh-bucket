@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Organics = () => {
   const [filter, setFilter] = useState("all");
-  //passing the json data as initial values then filter by data.organics item.type
+  //passing the json data as initial values then filter by data.organics then by type
   const [filteredData, setFilteredData] = useState(data.organics);
 
   //filter products by category

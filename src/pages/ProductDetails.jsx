@@ -7,7 +7,7 @@ import { FaStar } from "react-icons/fa"; // Import star icon
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import BestProducts from "../components/BestProducts";
 import Crumbs from "../components/Crumbs";
-
+import Descriptions from "../components/Descriptions";
 
 const ProductDetails = () => {
   const [singleProducts, setSingleProducts] = useState([]);
@@ -28,7 +28,7 @@ const ProductDetails = () => {
   return (
     <>
       <div className="hero-bg md:py-6">
-        <Crumbs/>
+        <Crumbs />
         <div className="max-w-[1440px] mx-auto  text-black pt-6">
           <div className="w-full max-w[1440px]">
             <div className="bg-white flex sm:flex-col md:flex-row gap-2 mx-10">
@@ -88,7 +88,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-
+      <Descriptions/>
       <BestProducts />
     </>
   );
